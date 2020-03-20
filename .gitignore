@@ -1,0 +1,6 @@
+.DS_Store
+.idea
+mowa-api
+mowa-ui
+docker_files/neo4j
+
