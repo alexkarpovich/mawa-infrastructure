@@ -11,6 +11,7 @@ FROM nginx:alpine
 
 COPY ./docker_files/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker_files/nginx/conf.d/ /etc/nginx/conf.d/
+COPY ./docker_files/nginx/ssl/ /etc/nginx/ssl
 COPY --from=builder /react-ui /usr/src/mowa-ui
 
 EXPOSE 3000 80

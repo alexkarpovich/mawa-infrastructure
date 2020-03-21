@@ -3,4 +3,8 @@
 mowa-api
 mowa-ui
 docker_files/neo4j
+docker_files/nginx/ssl/*
+!docker_files/nginx/ssl/generate-cert.sh
+!docker_files/nginx/ssl/server.csr.cnf
+!docker_files/nginx/ssl/v3.ext
 

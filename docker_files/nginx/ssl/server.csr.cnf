@@ -1,0 +1,13 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=BY
+ST=Minsk district
+L=Minsk
+O=Mowa
+OU=Mowa Free
+CN=mowa.local
