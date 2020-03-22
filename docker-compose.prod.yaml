@@ -12,9 +12,3 @@ services:
     links:
       - node-api
 
-  node-api:
-    depends_on:
-      - neo4j
-    links:
-      - neo4j
-

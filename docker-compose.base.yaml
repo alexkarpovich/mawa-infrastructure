@@ -10,6 +10,10 @@ services:
       - "4000:4000"
     volumes:
       - ./mowa-api/src:/usr/app/src
+    depends_on:
+      - neo4j
+    links:
+      - neo4j
 
   neo4j:
     image: neo4j:4.0
