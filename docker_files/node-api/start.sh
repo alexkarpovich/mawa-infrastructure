@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 
-echo "Waiting for Rabbit MQ on ${RABBITMQ_HOST}"
+if [ "$APP_ENV" == "production" ]
+then
+  npm run prod:www
+else
+  echo "Waiting for Rabbit MQ on ${RABBITMQ_HOST}"
 
-until timeout 1 bash -c "cat < /dev/null > /dev/tcp/${RABBITMQ_HOST}/5672"; do
-  >&2 sleep 3
-done
+  while ! nc -z "${RABBITMQ_HOST}" 5672; do sleep 3; done
 
-npm run dev
+  npm run dev
+fi

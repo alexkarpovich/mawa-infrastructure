@@ -13,11 +13,8 @@ services:
       - node-api
 
   node-api:
-    restart: always
     depends_on:
       - neo4j
-      - rabbitmq
     links:
       - neo4j
-      - rabbitmq
 
