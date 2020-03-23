@@ -1,8 +1,8 @@
 FROM node:12-alpine as builder
-COPY ./mowa-ui/package*.json ./
+COPY ./mowy-ui/package*.json ./
 RUN npm install && mkdir -p /react-ui && mv ./node_modules /react-ui
 WORKDIR /react-ui
-COPY ./mowa-ui .
+COPY ./mowy-ui .
 RUN npm run build
 
 FROM nginx:alpine
@@ -12,7 +12,7 @@ FROM nginx:alpine
 COPY ./docker_files/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./docker_files/nginx/conf.d/ /etc/nginx/conf.d/
 COPY ./docker_files/nginx/ssl/ /etc/nginx/ssl
-COPY --from=builder /react-ui /usr/src/mowa-ui
+COPY --from=builder /react-ui /usr/src/mowy-ui
 
 EXPOSE 3000 80
 

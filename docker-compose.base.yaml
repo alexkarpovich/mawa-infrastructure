@@ -9,7 +9,7 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - ./mowa-api/src:/usr/app/src
+      - ./mowy-api/src:/usr/app/src
     depends_on:
       - neo4j
     links:
@@ -25,4 +25,4 @@ services:
     volumes:
       - ./docker_files/neo4j/data:/data
       - ./docker_files/neo4j/plugins:/plugins
-      - ./mowa-api/src/seeds/data:/var/lib/neo4j/import/seeds
+      - ./mowy-api/src/seeds/data:/var/lib/neo4j/import/seeds

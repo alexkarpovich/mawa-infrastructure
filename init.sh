@@ -1,2 +1,2 @@
-git clone git@github.com:alexkarpovich/mowa-api.git
-git clone git@github.com:alexkarpovich/mowa-ui.git
+git clone git@github.com:alexkarpovich/mowy-api.git
+git clone git@github.com:alexkarpovich/mowy-ui.git
