@@ -1,5 +1,6 @@
 .DS_Store
 .idea
+.env
 mowy-api
 mowy-ui
 docker_files/neo4j

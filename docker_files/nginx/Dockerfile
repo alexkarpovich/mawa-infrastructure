@@ -8,9 +8,10 @@ RUN npm run build
 FROM nginx:alpine
 
 #!/bin/sh
+ARG app_stage
 
 COPY ./docker_files/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./docker_files/nginx/conf.d/ /etc/nginx/conf.d/
+COPY ./docker_files/nginx/$app_stage.conf.d/ /etc/nginx/conf.d/
 COPY ./docker_files/nginx/ssl/ /etc/nginx/ssl
 COPY --from=builder /react-ui /usr/src/mowy-ui
 

@@ -1,11 +1,25 @@
 version: "3"
 services:
+  nginx:
+    build:
+      context: .
+      dockerfile: docker_files/nginx/Dockerfile
+      args:
+        app_stage: ${APP_STAGE}
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - node-api
+    links:
+      - node-api
+
   node-api:
     build:
       context: .
       dockerfile: docker_files/node-api/Dockerfile
     env_file: .env
-    command: bash /usr/script/start.sh
+    command: sh /usr/script/start.sh
     ports:
       - "4000:4000"
     volumes:
